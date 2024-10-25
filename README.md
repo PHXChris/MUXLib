@@ -40,6 +40,94 @@ A beginner-friendly Arduino library for controlling a wide selection of analog a
 
 ## Quick Start
 
+## Including Header Files
+
+The library is modular to keep code size minimal. Include only the headers you need for your specific multiplexer:
+
+### Basic Include (Required)
+```cpp
+#include <MUXLib.h>  // Always include this base header
+```
+
+### Analog Multiplexers
+```cpp
+#include <AnalogMUX.h>  // For these multiplexers:
+// - 74HC4051 (8-channel)
+// - 74HC4067 (16-channel)
+// - 74HC4052 (Dual 4-channel)
+// - 74HC4053 (Triple 2-channel)
+// - ADG508A/ADG509A
+// - ADG706/ADG707
+// - ADG506A/ADG507A
+// - MPC506A/MPC507A
+// - DG408/DG409
+// - MAX4051A
+// - MAX4582
+```
+
+### Digital Multiplexers
+```cpp
+#include <DigitalMUX.h>  // For these multiplexers:
+// - CD74HC4067
+// - CD74HC4051
+```
+
+### I²C Multiplexers
+```cpp
+#include <I2CMUX.h>  // For these multiplexers:
+// - TCA9548A
+```
+
+### Examples
+
+1. Using a 74HC4051 analog multiplexer:
+```cpp
+#include <MUXLib.h>
+#include <AnalogMUX.h>
+
+MUXLib::HC4051 mux(selectPins, sigPin);
+```
+
+2. Using a CD74HC4067 for digital inputs:
+```cpp
+#include <MUXLib.h>
+#include <DigitalMUX.h>
+
+MUXLib::CD74HC4067 mux(selectPins, sigPin);
+```
+
+3. Using a TCA9548A I²C multiplexer:
+```cpp
+#include <MUXLib.h>
+#include <I2CMUX.h>
+
+MUXLib::TCA9548A i2cMux;
+```
+
+4. Using multiple types of multiplexers:
+```cpp
+#include <MUXLib.h>
+#include <AnalogMUX.h>
+#include <DigitalMUX.h>
+#include <I2CMUX.h>
+
+MUXLib::HC4051 analogMux(analogPins, analogSigPin);
+MUXLib::CD74HC4067 digitalMux(digitalPins, digitalSigPin);
+MUXLib::TCA9548A i2cMux;
+```
+
+### Important Notes
+- Always include `MUXLib.h` first
+- Include only the headers for the multiplexer types you're using
+- Including unnecessary headers will increase program size
+- All classes are in the `MUXLib` namespace
+
+Would you like me to:
+1. Add more examples of specific combinations?
+2. Include information about header dependencies?
+3. Add a troubleshooting section for include-related issues?
+4. Add information about platform-specific includes?
+
 ### Basic Example - 74HC4051 (8-channel analog multiplexer)
 ```cpp
 #include <MUXLib.h>
