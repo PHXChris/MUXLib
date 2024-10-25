@@ -1,6 +1,6 @@
 # MUXLib - Arduino Multiplexer Library
 
-A beginner-friendly Arduino library for controlling analog and digital multiplexers. This library makes it easy to use multiplexers (MUX) to expand the number of inputs/outputs on your Arduino.
+A beginner-friendly Arduino library for controlling a wide selection of analog and digital multiplexers. This library makes it easy to use multiplexers (MUX) to expand the number of inputs/outputs on your Arduino.
 
 ## Supported Devices
 
