@@ -122,12 +122,6 @@ MUXLib::TCA9548A i2cMux;
 - Including unnecessary headers will increase program size
 - All classes are in the `MUXLib` namespace
 
-Would you like me to:
-1. Add more examples of specific combinations?
-2. Include information about header dependencies?
-3. Add a troubleshooting section for include-related issues?
-4. Add information about platform-specific includes?
-
 ### Basic Example - 74HC4051 (8-channel analog multiplexer)
 ```cpp
 #include <MUXLib.h>
